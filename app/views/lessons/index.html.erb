@@ -1,0 +1,14 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Time</th>
+      <tr>
+    </thead>
+    <tbody>
+      <%= render partial: "lesson", collection: @lessons, as: :lesson %>
+    </tbody>
+  </table>
+</div>
