@@ -17,6 +17,7 @@ gem "jquery-rails"
 gem "bootstrap-sass"
 gem "ffaker"
 gem "kaminari"
+gem "pry-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

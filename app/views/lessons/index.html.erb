@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container js-infinite-pages">
   <table class="table">
     <thead>
       <tr>
@@ -7,8 +7,25 @@
         <th>Time</th>
       <tr>
     </thead>
-    <tbody>
+    <tbody class="js-infinite-table-body">
       <%= render partial: "lesson", collection: @lessons, as: :lesson %>
     </tbody>
   </table>
+
+  <p class="pagination">
+    <%= link_to_next_page @lessons, "Next Page", remote: true %>
+  </p>
 </div>
+
+<script type="text/javascript">
+  $('.js-infinite-pages').infinitePages({
+    debug: true,
+    buffer: 200,
+    loading: function() {
+      return $(this).text('Loading next page...');
+    },
+    error: function() {
+      return $(this).button('There was an error, please try again');
+    }
+  });
+</script>
